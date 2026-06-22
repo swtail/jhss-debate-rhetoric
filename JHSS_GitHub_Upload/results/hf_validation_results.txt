@@ -1,4 +1,0 @@
-=== Hugging Face hate-speech model vs. 372-sentence human gold ===
-model: facebook/roberta-hate-speech-dynabench-r4-target
-[gold_lenient] pos= 38  TP=11 FP=16 FN=27  P=0.41 R=0.29 F1=0.34
-[gold_strict ] pos= 10  TP=4 FP=23 FN=6  P=0.15 R=0.40 F1=0.22
