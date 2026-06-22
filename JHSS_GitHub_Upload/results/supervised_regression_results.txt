@@ -1,0 +1,23 @@
+=== Section 6.10: H3 on the validated supervised discriminatory measure ===
+Supervised classifier cross-validated F1 = 0.79 +/- 0.03
+Spec: WLS weighted by poll sample size; election-year FE; SE clustered by debate.
+
+DV = change in Democratic poll share  (N=529 polls, clusters=14)
+var                        coef       se      t       p
+Discriminatory_Dem       -0.075    0.067  -1.12   0.282 
+Discriminatory_Rep        0.133    0.089   1.49   0.161 
+pre_democrats            -0.841    0.063 -13.25   0.000 ***
+pre_republicans           0.021    0.070   0.31   0.764 
+Immigration               0.378    0.334   1.13   0.279 
+ForeignPolicy            -0.807    0.788  -1.03   0.324 
+AbortionRights            0.718    0.996   0.72   0.484 
+
+DV = change in Republican poll share  (N=529 polls, clusters=14)
+var                        coef       se      t       p
+Discriminatory_Dem       -0.027    0.006  -4.58   0.001 ***
+Discriminatory_Rep        0.001    0.012   0.10   0.919 
+pre_democrats            -0.035    0.067  -0.52   0.612 
+pre_republicans          -0.889    0.080 -11.15   0.000 ***
+Immigration              -0.425    0.173  -2.45   0.029 **
+ForeignPolicy             0.863    0.219   3.93   0.002 ***
+AbortionRights           -1.115    0.246  -4.53   0.001 ***

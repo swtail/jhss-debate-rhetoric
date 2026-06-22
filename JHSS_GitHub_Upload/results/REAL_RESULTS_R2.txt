@@ -1,0 +1,120 @@
+JHSS R2 RE-ANALYSIS  | dataset: poll_final_data_with_change.dta
+Estimation N=629 | debate clusters=16 | years=[np.int64(2004), np.int64(2008), np.int64(2012), np.int64(2016), np.int64(2020)]
+NOTE: incumbency, GDP, per-capita GDP take one value per election year -> absorbed by year FE.
+
+==========================================================================================
+PREVALENCE BY PARTY (Comment 15)
+==========================================================================================
+  Democratic candidate-debates n=14
+     aggressive_words       mean=1.29  total=18  share>0=50%
+     inflammatory_words     mean=0.14  total=2  share>0=7%
+     discriminatory_words   mean=1.00  total=14  share>0=14%
+  Republican candidate-debates n=15
+     aggressive_words       mean=3.87  total=58  share>0=73%
+     inflammatory_words     mean=1.47  total=22  share>0=47%
+     discriminatory_words   mean=1.47  total=22  share>0=13%
+
+==========================================================================================
+TABLE 2 (REAL) Baseline, full controls (year FE + pre-shares + topics), WLS, debate-clustered SE
+==========================================================================================
+
+  DV=Change_Democrats  N=463 clusters=12 adjR2=0.482
+    aggressive_words           -0.0220    (p=0.346)
+    inflammatory_words         +0.0159    (p=0.498)
+    discriminatory_words       -0.0472    (p=0.720)
+
+  DV=Change_Republicans  N=463 clusters=12 adjR2=0.485
+    aggressive_words           +0.0029    (p=0.891)
+    inflammatory_words         +0.0546    (p=0.156)
+    discriminatory_words       +0.1218**  (p=0.030)
+
+==========================================================================================
+TABLE 3 (REAL) Source-specific, full controls
+==========================================================================================
+
+  DV=Change_Democrats  N=463 clusters=12 adjR2=0.481
+    aggressive_words_d         +0.0492    (p=0.335)
+    aggressive_words_r         +0.0028    (p=0.896)
+    inflammatory_words_d       +0.3540    (p=0.173)
+    inflammatory_words_r       +0.0118    (p=0.751)
+    discriminatory_words_d     +0.3502*   (p=0.072)
+    discriminatory_words_r     +0.2233**  (p=0.026)
+
+  DV=Change_Republicans  N=463 clusters=12 adjR2=0.483
+    aggressive_words_d         +0.1498    (p=0.113)
+    aggressive_words_r         -0.0052    (p=0.829)
+    inflammatory_words_d       +0.0698    (p=0.888)
+    inflammatory_words_r       +0.1301**  (p=0.018)
+    discriminatory_words_d     +0.0689    (p=0.811)
+    discriminatory_words_r     +0.1008    (p=0.448)
+
+==========================================================================================
+TABLE 4 (REAL) Sample-size heterogeneity (rhetoric x High_Sample)
+==========================================================================================
+
+  DV=Change_Democrats  N=463 clusters=12 adjR2=0.480
+    inflammatory_words_r_xhs   -0.2240**  (p=0.023)
+    discriminatory_words_d_xhs -0.2889**  (p=0.044)
+    discriminatory_words_r_xhs -0.2082*** (p=0.004)
+
+  DV=Change_Republicans  N=463 clusters=12 adjR2=0.508
+    inflammatory_words_r_xhs   +0.3912*** (p=0.000)
+    discriminatory_words_d_xhs -0.5583*** (p=0.003)
+    discriminatory_words_r_xhs -0.0241    (p=0.574)
+
+==========================================================================================
+TABLE 5 (REAL) Polarization amplification (Comments 13,14) -- interactions vs year FE
+==========================================================================================
+
+  DV=Change_Democrats  N=463 clusters=12 adjR2=0.479
+    dropped (collinear): inflammatory_words_d_xhp, inflammatory_words_r_xhp, discriminatory_words_d_xhp, discriminatory_words_r_xhp
+    inflammatory_words_d_xhp   [dropped — collinear]
+    inflammatory_words_r_xhp   [dropped — collinear]
+    discriminatory_words_d_xhp [dropped — collinear]
+    discriminatory_words_r_xhp [dropped — collinear]
+    aggressive_words_d_xhp     -0.2722**  (p=0.026)
+    aggressive_words_r_xhp     +0.0366    (p=0.471)
+
+==========================================================================================
+DEBATE-LEVEL AGGREGATION ~ (Comment 8): collapse to candidate-debate, OLS HC1
+==========================================================================================
+  N candidate-debate units = 29
+  DV=Change_Republicans (unsigned):
+    aggressive_words       -0.0006    (p=0.982)
+    inflammatory_words     +0.1321**  (p=0.049)
+    discriminatory_words   -0.0179    (p=0.509)
+
+==========================================================================================
+PLACEBO + FORMAL DIFFERENCE TEST (Comment 9): stack pre & post, interact x POST
+==========================================================================================
+  Difference = post-debate minus placebo coefficient:
+    inflammatory_words_r_xpost     +0.1447    (p=0.204)
+    discriminatory_words_r_xpost   -0.0769*   (p=0.075)
+
+==========================================================================================
+MEASUREMENT-ERROR SENSITIVITY (Comment 4): 15% random label noise, 400 MC reps
+==========================================================================================
+  baseline inflammatory_words_r = +0.130
+  under noise: mean=+0.126 sd=0.022 5-95pct=[+0.090,+0.162] same-sign=100.0%
+
+==========================================================================================
+SPECIFICATION SENSITIVITY (the honest robustness point): inflammatory_words_d on Change_Democrats
+==========================================================================================
+  year FE + pre-shares             inflam_d = -1.090*** (p=0.002)
+  + topic controls (main spec)     inflam_d = +0.354    (p=0.173)
+  no year FE, topics+macro         inflam_d = +0.354    (p=0.173)
+
+==========================================================================================
+VIF (Comment 13): year-level macro vars vs year structure
+==========================================================================================
+  VIF inflammatory_words_d     =       4.5
+  VIF inflammatory_words_r     =       2.2
+  VIF discriminatory_words_d   =       5.8
+  VIF discriminatory_words_r   =       2.4
+  VIF incumbent_democrat       =       1.7
+  VIF gdpbillionsofus          =      17.2
+  VIF percapitaus              =      22.0
+  VIF pre_democrats            =       1.5
+  VIF pre_republicans          =       2.0
+
+DONE.

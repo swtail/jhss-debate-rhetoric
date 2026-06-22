@@ -1,0 +1,60 @@
+corpus sentences: 24546 | flagged: agg=1540 inf=568 dis=8
+
+=== GOLD VALIDATION (per-category binary) ===
+  aggressive     n_gold= 6 P=0.08 R=0.17 F1=0.11
+  inflammatory   n_gold=10 P=0.62 R=1.00 F1=0.77
+  discriminatory n_gold= 0 P=nan R=nan F1=nan
+
+panel after merge: N=488 debate-clusters=12
+
+========== MODEL 1: BASELINE (unsigned), original spec ==========
+
+--- DV=Change_Democrats  N=463 clusters=12 adjR2=0.484
+   aggressive_words         +0.0090**  (p=0.011)
+   inflammatory_words       +0.0014    (p=0.593)
+   discriminatory_words     +0.0663*** (p=0.003)
+
+--- DV=Change_Republicans  N=463 clusters=12 adjR2=0.488
+   aggressive_words         -0.0105*** (p=0.001)
+   inflammatory_words       -0.0152*** (p=0.000)
+   discriminatory_words     -0.1516*** (p=0.000)
+
+========== MODEL 2: SOURCE-SPECIFIC, original spec ==========
+
+--- DV=Change_Democrats  N=463 clusters=12 adjR2=0.481
+   aggressive_words_d       -0.0017*** (p=0.002)
+   aggressive_words_r       +0.0379*** (p=0.000)
+   inflammatory_words_d     +0.0191*** (p=0.000)
+   inflammatory_words_r     -0.0027    (p=0.187)
+   discriminatory_words_d   -0.0493*   (p=0.087)
+   discriminatory_words_r   [dropped/collinear]
+
+--- DV=Change_Republicans  N=463 clusters=12 adjR2=0.486
+   aggressive_words_d       -0.0137*** (p=0.000)
+   aggressive_words_r       -0.0089**  (p=0.029)
+   inflammatory_words_d     -0.0051**  (p=0.043)
+   inflammatory_words_r     -0.0166*** (p=0.000)
+   discriminatory_words_d   -0.1768*** (p=0.001)
+   discriminatory_words_r   [dropped/collinear]
+
+========== MODEL 3: SAMPLE-SIZE INTERACTIONS ==========
+
+--- DV=Change_Democrats  N=463 clusters=12 adjR2=0.484
+   aggressive_words_d_xhs   +0.0285**  (p=0.033)
+   aggressive_words_r_xhs   +0.0121    (p=0.474)
+   inflammatory_words_d_xhs +0.0430    (p=0.222)
+   inflammatory_words_r_xhs -0.0267*** (p=0.008)
+   discriminatory_words_d_xhs -0.2901*** (p=0.010)
+   discriminatory_words_r_xhs [dropped/collinear]
+
+--- DV=Change_Republicans  N=463 clusters=12 adjR2=0.507
+   aggressive_words_d_xhs   +0.0351**  (p=0.042)
+   aggressive_words_r_xhs   -0.0113    (p=0.553)
+   inflammatory_words_d_xhs -0.0154    (p=0.500)
+   inflammatory_words_r_xhs +0.0260**  (p=0.015)
+   discriminatory_words_d_xhs +0.1090*   (p=0.083)
+   discriminatory_words_r_xhs [dropped/collinear]
+
+========== MODEL 4: DEBATE-LEVEL AGGREGATION ==========
+  DV=change_democrats (N=12): {'aggressive_words': (np.float64(-0.004), np.float64(0.193)), 'inflammatory_words': (np.float64(-0.001), np.float64(0.687)), 'discriminatory_words': (np.float64(0.047), np.float64(0.08))}
+  DV=change_republicans (N=12): {'aggressive_words': (np.float64(-0.002), np.float64(0.512)), 'inflammatory_words': (np.float64(0.004), np.float64(0.012)), 'discriminatory_words': (np.float64(-0.007), np.float64(0.697))}
