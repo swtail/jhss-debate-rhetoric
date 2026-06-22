@@ -20,23 +20,28 @@ charged name-calling.
 - ✓ "His agenda is radical, dangerous, and corrupt."
 - ✗ "Unemployment rose by two percent last year." (factual, unloaded)
 
-## discriminatory = 1 ONLY when
-The speaker **themselves demeans, dehumanizes, or derogates a PROTECTED GROUP** —
-defined by race, ethnicity, religion, national origin, gender, or sexual orientation —
-**as a group**.
-EXCLUDE (these are discriminatory = 0):
-- Statements **condemning, denouncing, or describing** discrimination by others.
-- **Quoting or attributing** a discriminatory statement to someone else.
-- Neutral or positive uses of phrases like "those people" (e.g., frontline workers).
-- Policy discussion (immigration, abortion, etc.) **without** group derogation.
-- Attacks on **individuals** or **foreign leaders/governments** (not a protected group).
+## discriminatory = 1 when
+The sentence **targets, demeans, stereotypes, stigmatizes, or expresses hostility toward a group**
+defined by race, ethnicity, religion, national origin, gender, or sexual orientation. This is broader
+than explicit dehumanization and includes:
+- negative group generalizations or stereotypes;
+- group-blaming (attributing crime, violence, terrorism, or social harm to a group);
+- fear- or threat-framing about a group (invasion, infestation, "taking over," "taking our jobs");
+- coded or identity-charged appeals.
+EXCLUDE only:
+- genuine condemnations or denunciations of discrimination;
+- direct quotation attributing discriminatory speech to someone else;
+- neutral or positive references that do not target a group;
+- attacks on a specific individual or a foreign government that are not about a protected group.
 Examples:
-- ✓ "Those immigrants are animals who don't belong here." (speaker derogates a group)
+- ✓ "Those immigrants are animals who don't belong here." (dehumanization)
+- ✓ "They're pouring across the border bringing crime and drugs." (group-blaming / threat framing)
+- ✓ "We have many criminal illegal aliens." (group-blaming)
 - ✗ "He launched his campaign calling Mexicans rapists." (condemning/quoting → 0)
+- ✗ "African-Americans get sentenced more harshly for the same crimes." (describing discrimination → 0)
 - ✗ "He praises thugs like the leader of North Korea." (foreign leader → 0)
-- ✗ "Those people on the front lines saved our lives." (positive → 0)
 
 ## none
 If none of the three apply, all three labels are 0.
 
-When uncertain about discriminatory, default to 0 unless the group-derogation is explicit.
+When uncertain about discriminatory, lean toward 1 if a protected group is the target of ne

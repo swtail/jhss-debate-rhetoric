@@ -26,7 +26,7 @@ from transformers import pipeline
 LABELS = {
     "aggressive":     "a confrontational personal attack accusing an opponent of failure, lying, or incompetence",
     "inflammatory":   "emotionally provocative, fear-mongering, or morally outraged language",
-    "discriminatory": "a demeaning or dehumanizing attack on a racial, ethnic, religious, national, or gender group",
+    "discriminatory": "rhetoric that targets, demeans, stereotypes, or blames a racial, ethnic, religious, national, or gender group, including group-blaming, threat framing, and coded identity-charged appeals",
 }
 # expert gold single-labels, order matches gold_sample.json
 GOLD = list("NNNIAINNNI"+"NNNINNINNN"+"NNNNNNANNN"+"ANANNNNINI"+"NNNIAINNNN"+"NINNANNNNN")
