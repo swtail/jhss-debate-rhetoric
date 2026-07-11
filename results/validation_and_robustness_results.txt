@@ -1,0 +1,14 @@
+================================================================
+(1) RQ1 CLASSIFIER VALIDATION — cross-validated F1
+================================================================
+   aggressive    F1 = 0.65 +/- 0.01
+   inflammatory  F1 = 0.52 +/- 0.03
+   discriminatory  F1 = 0.79-0.81 (off-the-shelf <= 0.25)
+
+================================================================
+(2) RQ2 WILD CLUSTER BOOTSTRAP — validated source-specific, 2004-2024
+================================================================
+   DV=rep infl_d: beta=-0.009 t=-2.59 wild p=0.009*** (G=18)
+   DV=rep disc_d: beta=-0.067 t=-9.93 wild p=0.003*** (G=18)
+   DV=rep disc_r: beta=+0.020 t=+4.43 wild p=0.059* (G=18)
+   DV=dem aggr_d: beta=+0.013 t=+2.54 wild p=0.324 (G=18)
