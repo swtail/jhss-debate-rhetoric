@@ -1,0 +1,17 @@
+==========================================================================
+PLACEBO-TREATMENT FALSIFICATION (content-free rhetoric)
+==========================================================================
+
+Total sentences (verbosity):
+   total_d        DV=D Democratic  coef=+0.00358  SE=0.00093  wild p=0.315 (G=18)
+   total_r        DV=D Democratic  coef=+0.00498  SE=0.00087  wild p=0.239 (G=18)
+   total_d        DV=D Republican  coef=-0.00094  SE=0.00057  wild p=0.446 (G=18)
+   total_r        DV=D Republican  coef=+0.00055  SE=0.00057  wild p=0.546 (G=18)
+
+Non-hostile sentences:
+   nonhostile_d   DV=D Democratic  coef=+0.00549  SE=0.00281  wild p=0.428 (G=18)
+   nonhostile_r   DV=D Democratic  coef=+0.00457  SE=0.00162  wild p=0.375 (G=18)
+   nonhostile_d   DV=D Republican  coef=-0.00077  SE=0.00104  wild p=0.665 (G=18)
+   nonhostile_r   DV=D Republican  coef=+0.00085  SE=0.00064  wild p=0.501 (G=18)
+
+Reference (hostile counts, same spec, Republican-share change): infl_d wild p≈0.009, disc_d≈0.003, disc_r≈0.059.

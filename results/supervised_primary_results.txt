@@ -1,0 +1,16 @@
+debates scored: 18
+panel rows: 695  debates: 18
+
+=== BASELINE (pooled), 2004-2024 ===
+ DV=dem N=695 G=18: aggr_tot +0.0076(0.108), infl_tot +0.0029(0.314), disc_tot +0.0318(0.099)*
+ DV=rep N=695 G=18: aggr_tot -0.0002(0.815), infl_tot -0.0041(0.000)***, disc_tot -0.0021(0.379)
+
+=== SOURCE-SPECIFIC by category, 2004-2024 (full 6-reg model is under-identified) ===
+ aggr DV=dem (G=18,N=695): aggr_d +0.013(0.021)**  aggr_r +0.014(0.095)*
+ aggr DV=rep (G=18,N=695): aggr_d -0.004(0.053)*  aggr_r -0.000(0.856)
+ infl DV=dem (G=18,N=695): infl_d -0.028(0.202)  infl_r +0.066(0.118)
+ infl DV=rep (G=18,N=695): infl_d -0.009(0.019)**  infl_r +0.004(0.623)
+ disc DV=dem (G=18,N=695): disc_d +0.018(0.744)  disc_r +0.061(0.133)
+ disc DV=rep (G=18,N=695): disc_d -0.067(0.000)***  disc_r +0.020(0.000)***
+
+(Wild-bootstrap survivors on Republican change: Inflammatory_Words_Dem p~0.009, Discriminatory_Words_Dem p~0.003, Discriminatory_Words_Rep p~0.059; see validation_and_robustness.py.)
